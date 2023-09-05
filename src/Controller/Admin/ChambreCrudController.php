@@ -21,5 +21,6 @@ class ChambreCrudController extends AbstractCrudController
             TextEditorField::new('description'),
         ];
     }
+    */
     
 }

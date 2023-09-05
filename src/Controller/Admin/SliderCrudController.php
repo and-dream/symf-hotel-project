@@ -6,6 +6,8 @@ use App\Entity\Slider;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 
 class SliderCrudController extends AbstractCrudController
@@ -15,25 +17,27 @@ class SliderCrudController extends AbstractCrudController
         return Slider::class;
     }
 
-    
+
+        
     public function configureFields(string $pageName): iterable
     {
         return [
-
             IdField::new('id')->hideOnForm(),
-
-             //*création (new)
-             ImageField::new('image')->setUploadDir('public/image/')->setUploadedFileNamePattern('[timestamp]-[slug]-.[extension]')->onlyWhenCreating(),
-
-             //*update
-             ImageField::new('image')->setUploadDir('public/image/')->setUploadedFileNamePattern('[timestamp]-[slug].[extension]')->setFormTypeOptions(['required' => false])->onlyWhenUpdating(),
- 
- 
-             //*affichage
-             ImageField::new('image')->setBasePath('image/')->hideOnForm()
-
-             TextField::new('title', 'Ordre'),
+            ImageField::new('photo')->setUploadDir('public/images')->setUploadedFileNamePattern('[timestamp]-[slug]-[contenthash].[extension]')->onlyWhenUpdating()->setFormTypeOptions([
+            'required' => false, ]),  
+            ImageField::new('photo')->setUploadDir('public/uploads/images/')->setUploadedFileNamePattern('[timestamp]-[slug]-[contenthash].[extension]')->onlyWhenCreating(),
+            ImageField::new('photo')->setBasePath('uploads/images/')->hideOnForm(),
+            IntegerField::new('ordre'),
+            DateTimeField::new('date_enregistrement')->setFormat('d/M/Y à H:m:s')->hideOnForm()
         ];
     }
+    
+    public function createEntity(string $entityFqcn)
+    {
+        $slider =new $entityFqcn;
+        $slider->setDateEnregistrement(new \DateTime);
+        return $slider;
+    }
+
     
 }
