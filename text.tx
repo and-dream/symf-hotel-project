@@ -1,0 +1,13 @@
+slider -> propriété Active (qui va nous permettre d'avoir la 1ère image)
+qd on parcourt les images on les aura dans un certain ordre -> les récup ds le bon ordre
+order by (avec le repository)
+
+
+error : undefined type -> reload window
+
+DashboardController : 
+-> changer le path du return
+return $this->render('admin/my-dashboard.html.twig');
+-> créer dans Template admin>my-dashboard.html.twig
+
+
