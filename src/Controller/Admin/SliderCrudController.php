@@ -32,7 +32,7 @@ class SliderCrudController extends AbstractCrudController
              //*affichage
              ImageField::new('image')->setBasePath('image/')->hideOnForm()
 
-             TextField::new('title', 'Ordre'),
+             
         ];
     }
     
