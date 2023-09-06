@@ -11,3 +11,14 @@ return $this->render('admin/my-dashboard.html.twig');
 -> créer dans Template admin>my-dashboard.html.twig
 
 
+Hotel
+Crillon
+Hyatt
+Le Bristol
+Le Royal Monceau
+Le Raphael
+Hôtel Partuclier
+Shangri La
+Peninsula
+
+
