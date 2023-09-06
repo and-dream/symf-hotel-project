@@ -2,11 +2,12 @@
 
 namespace App\Entity;
 
-use App\Repository\ChambreRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
+use DateTimeInterface;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\ChambreRepository;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
 
 #[ORM\Entity(repositoryClass: ChambreRepository::class)]
 class Chambre
@@ -32,7 +33,7 @@ class Chambre
     private ?int $prix_journalier = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    private ?\DateTimeInterface $date_enregistrement = null;
+    private ?DateTimeInterface $date_enregistrement = null;
 
     #[ORM\OneToMany(mappedBy: 'chambre', targetEntity: Commande::class)]
     private Collection $commandes;

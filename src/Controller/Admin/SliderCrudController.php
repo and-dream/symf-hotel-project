@@ -23,12 +23,12 @@ class SliderCrudController extends AbstractCrudController
     {
         return [
             IdField::new('id')->hideOnForm(),
-            ImageField::new('photo')->setUploadDir('public/images')->setUploadedFileNamePattern('[timestamp]-[slug]-[contenthash].[extension]')->onlyWhenUpdating()->setFormTypeOptions([
+            ImageField::new('photo')->setUploadDir('public/image')->setUploadedFileNamePattern('[timestamp]-[slug]-[contenthash].[extension]')->onlyWhenUpdating()->setFormTypeOptions([
             'required' => false, ]),  
-            ImageField::new('photo')->setUploadDir('public/images/')->setUploadedFileNamePattern('[timestamp]-[slug]-[contenthash].[extension]')->onlyWhenCreating(),
-            ImageField::new('photo')->setBasePath('images/')->hideOnForm(),
+            ImageField::new('photo')->setUploadDir('public/image/')->setUploadedFileNamePattern('[timestamp]-[slug]-[contenthash].[extension]')->onlyWhenCreating(),
+            ImageField::new('photo')->setBasePath('image/')->hideOnForm(),
             IntegerField::new('ordre'),
-            DateTimeField::new('date_enregistrement')->setFormat('d/M/Y à H:m:s')->hideOnForm()
+            DateTimeField::new('date_enregistrement')->setFormat('dd.MM.yyy à HH:mm:ss zzz')->hideOnForm()
         ];
     }
     
