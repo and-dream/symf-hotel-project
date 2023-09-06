@@ -9,6 +9,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 class UserCrudController extends AbstractCrudController
@@ -29,8 +30,17 @@ class UserCrudController extends AbstractCrudController
     {
         return [
             IdField::new('id')->hideOnForm(),
-            TextField::new('email'),
-            TextField::new('password', "mot de passe")->setFormType(PasswordType::class)->onlyWhenCreating(),
+            TextField::new('email', 'E-mail'),
+            TextField::new('pseudo', 'Pseudonyme'),
+            TextField::new('nom', 'Nom'),
+            TextField::new('prenom', 'Prénom'),
+            ChoiceField::new('civilite')->setChoices([
+                'Homme' => 'homme',
+                'Femme' => 'femme',
+            ]),
+
+
+            TextField::new('password', "Mot de passe")->setFormType(PasswordType::class)->onlyWhenCreating(),
             CollectionField::new('roles')->setTemplatePath('admin/field/roles.html.twig')          
         ];
     }

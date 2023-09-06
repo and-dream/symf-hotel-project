@@ -13,6 +13,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
 use EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\DashboardControllerInterface;
 
+
 class DashboardController extends AbstractDashboardController
 {
     #[Route('/admin', name: 'admin')]
@@ -33,15 +34,16 @@ class DashboardController extends AbstractDashboardController
         return [
             MenuItem::linkToDashboard("Tableau de bord", 'fa fa-house'),
             MenuItem::section('Staff Hôtel'),
-            MenuItem::linkToCrud('Admin', 'fas fa-user', User::class),
+            MenuItem::linkToCrud('User', 'fas fa-user', User::class),
             MenuItem::subMenu('Site Web', 'fa fa-desktop')
             ->setSubItems([
-                MenuItem::linkToCrud('Chambres', 'fa fa-person-shelter', Chambre::class),
-                MenuItem::linkToCrud('Commandes', 'fa fa-key', Commande::class),
-                MenuItem::linkToCrud('Slider', 'fa fa-image', Slider::class)
+                MenuItem::linkToCrud('Chambres', 'fa fa-person-shelter', Chambre::class),  
+                MenuItem::linkToCrud('Slider', 'fa fa-image', Slider::class),
             ]),
             MenuItem::section('Clients'),
-
+            MenuItem::linkToCrud('Commandes', 'fa fa-key', Commande::class),
+            MenuItem::section('Déconnexion'),
+            MenuItem::linkToUrl('logout', 'fa-solid fa-right-from-bracket', '/logout'),
             
         ];
     }
