@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\ChambreRepository;
 use App\Repository\SliderRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -20,9 +21,13 @@ class HomeController extends AbstractController
     }
 
     #[Route('/chambre', name:'chambre')]
-    public function room(): Response
+    public function room(ChambreRepository $repo): Response
     {
-        return $this->render('home/chambre.html.twig');
+        
+        $chambres = $repo->findAll();
+        return $this->render('home/chambre.html.twig', [
+            'chambres' => $chambres
+        ]);
     }
 
     #[Route('/restaurant', name:'restaurant')]

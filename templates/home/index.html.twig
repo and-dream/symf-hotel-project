@@ -8,83 +8,43 @@
 	{% include("partials/carousel.html.twig") %}
 
 
+	<div
+		class="container marketing">
 
-  <div class="container marketing">
+		<!-- Trois colonnes de texte en dessous du carousel -->
+		<div class="row text-center">
+			<div class="col-lg-4">
 
-    <!-- Three columns of text below the carousel -->
-    <div class="row text-center">
-      <div class="col-lg-4">
+				<img src="image/site/chambre.jpg" class="img-thumbnail rounded-circle" alt="...">
+				<h2 class="fw-normal mt-2">Nos chambres</h2>
+				<p>Découvrez l'essence du raffinement et du confort à travers nos chambres et suites, où chaque détail évoque l'époque grandiose de l'impératrice Eugénie, offrant un voyage inoubliable dans l'histoire et le luxe de Paris.</p>
+				<p>
+					<a class="btn btn-secondary" href="{{ path('chambre')}}">Détails &raquo;</a>
+				</p>
+			</div>
+			<!-- /.col-lg-4 -->
+			<div class="col-lg-4">
 
-		<img src="image/site/chambre.jpg" class="img-thumbnail rounded-circle" alt="...">
-        <h2 class="fw-normal mt-2">Nos chambres</h2>
-        <p>Découvrez l'essence du raffinement et du confort à travers nos chambres et suites, où chaque détail évoque l'époque grandiose de l'impératrice Eugénie, offrant un voyage inoubliable dans l'histoire et le luxe de Paris.</p>
-        <p><a class="btn btn-secondary" href="{{ path('chambre')}}">Détails &raquo;</a></p>
-      </div><!-- /.col-lg-4 -->
-      <div class="col-lg-4">
+				<img src="image/site/spa.jpg" class="img-thumbnail rounded-circle" alt="...">
+				<h2 class="fw-normal mt-2">Le spa</h2>
+				<p>Notre spa somptueux est un sanctuaire de relaxation. Profitez de soins et de massages prodigués par des professionnels expérimentés, et plongez dans notre piscine chauffée pour une expérience revigorante.</p>
+				<p>
+					<a class="btn btn-secondary" href="{{ path('spa')}}">Détails &raquo;</a>
+				</p>
+			</div>
+			<!-- /.col-lg-4 -->
+			<div class="col-lg-4">
+				<img src="image/site/restaurant.jpg" class="img-thumbnail rounded-circle" alt="...">
+				<h2 class="fw-normal mt-2">Le restaurant</h2>
+				<p>Découvrez un monde de saveurs au sein de notre restaurant étoilé. Notre chef talentueux vous invite à un voyage culinaire exquis, où chaque plat est une œuvre d'art gustative. Laissez-vous séduire par une cuisine qui célèbre les traditions françaises tout en innovant avec audace.</p>
+				<p>
+					<a class="btn btn-secondary" href="{{ path('restaurant')}}">Détails &raquo;</a>
+				</p>
+			</div>
+			<!-- /.col-lg-4 -->
+		</div>
+		<!-- /.row -->
 
-        <img src="image/site/spa.jpg" class="img-thumbnail rounded-circle" alt="...">
-        <h2 class="fw-normal mt-2">Le spa</h2>
-        <p>Notre spa somptueux est un sanctuaire de relaxation. Profitez de soins et de massages prodigués par des professionnels expérimentés, et plongez dans notre piscine chauffée pour une expérience revigorante.</p>
-        <p><a class="btn btn-secondary" href="{{ path('spa')}}">Détails &raquo;</a></p>
-      </div><!-- /.col-lg-4 -->
-      <div class="col-lg-4">
-        <img src="image/site/restaurant.jpg" class="img-thumbnail rounded-circle" alt="...">
-        <h2 class="fw-normal mt-2">Le restaurant</h2>
-        <p>Découvrez un monde de saveurs au sein de notre restaurant étoilé. Notre chef talentueux vous invite à un voyage culinaire exquis, où chaque plat est une œuvre d'art gustative. Laissez-vous séduire par une cuisine qui célèbre les traditions françaises tout en innovant avec audace.</p>
-        <p><a class="btn btn-secondary" href="{{ path('restaurant')}}">Détails &raquo;</a></p>
-      </div><!-- /.col-lg-4 -->
-    </div><!-- /.row -->
-
-
-    <!-- DEBUT FEATURETTES -->
-
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading fw-normal lh-1">Chambre Classique. <span class="text-body-secondary">Élégante, Confortable, Raffinée.</span></h2>
-        <p class="lead">La chambre classique vous enveloppe d'une élégance intemporelle, offrant un confort royal dans un cadre raffiné, créant ainsi une expérience inoubliable à Paris.</p>
-      </div>
-      <div class="col-md-5">
-        <img src="image/site/classique.jpg" class="img-fluid" alt="la chambre classique">
-        <p><a class="btn btn-secondary" href="{{ path('chambre')}}">Réserver &raquo;</a></p>
-      </div>
-    </div>
-
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-      <div class="col-md-7 order-md-2">
-        <h2 class="featurette-heading fw-normal lh-1">Chambre confort. <span class="text-body-secondary">Spacieuse, Invitante, Relaxante.</span></h2>
-        <p class="lead">Nos chambres confort vous accueillent dans un espace spacieux et chaleureux. Le coin salon confortable est idéal pour se détendre, tandis qu'un minibar bien garni est à votre disposition pour satisfaire vos envies. Vous êtes au cœur de Paris, entouré de confort et de raffinement.</p>
-      </div>
-      <div class="col-md-5 order-md-1">
-        <img src="image/site/confort.jpg" class="img-fluid" alt="la chambre confort">
-      <p><a class="btn btn-secondary" href="{{ path('chambre')}}">Réserver &raquo;</a></p>
-      </div>
-    </div>
-
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading fw-normal lh-1">Suite Royale. <span class="text-body-secondary">Somptueuse.</span></h2>
-        <p class="lead">La suite royale est un espace élégant où le luxe rencontre la grandeur, avec un salon privé somptueux, une vue imprenable, une baignoire spa apaisante, une douche à jets revitalisante et un service de majordome dévoué, créant ainsi une expérience inégalée de luxe parisien.</p>
-      </div>
-      <div class="col-md-5">
-        <img src="image/site/suite.jpg" class="img-fluid" alt="la suite royale">
-        <p><a class="btn btn-secondary" href="{{ path('chambre')}}">Réserver &raquo;</a></p>
-      </div>
-    </div>
-
-    <hr class="featurette-divider">
-
-    <!-- /FIN FEATURETTES -->
-
-  </div><!-- /.container -->
-
-
-
-	
+	</div>
 
 {% endblock %}

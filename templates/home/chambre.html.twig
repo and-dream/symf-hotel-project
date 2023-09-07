@@ -1,9 +1,75 @@
 {% extends "base.html.twig" %}
 
-{% block title %}Chambres{% endblock %}
+{% block title %}Chambres
+{% endblock %}
 
 {% block body %}
-<div class="container">
-<h1>Nos chambres</h1>
-</div>
+	<div class="container">
+		<h1>Nos chambres</h1>
+
+		<!-- DEBUT FEATURETTES -->
+
+		{% for chambre in chambres %}
+
+
+			<hr class="featurette-divider">
+
+			<div class="row featurette">
+				<div class="col-md-7">
+					<h2 class="featurette-heading fw-normal lh-1">{{chambre.titre}}
+						<span class="text-body-secondary">Élégante, Confortable, Raffinée.</span>
+					</h2>
+					<p>{{chambre.descriptionCourte}}</p>
+					{# <p class="lead">La chambre classique vous enveloppe d'une élégance intemporelle, offrant un confort royal dans un cadre raffiné, créant ainsi une expérience inoubliable à Paris.</p> #}
+					<p>
+						<a class="btn btn-outline-dark mb-4" href="{{ path('single_chambre', {id: chambre.id} )}}">Réserver &raquo;</a>
+					</p>
+			</div>
+			<div class="col-md-5">
+				<img src="{{ asset('image/' ~ chambre.photo )}}" class="img-fluid" alt="{{chambre.titre ~ '-' ~ chambre.photo}}">
+
+			</div>
+		</div>
+	{% endfor %}
+	{# <hr class="featurette-divider">
+	
+			<div class="row featurette">
+				<div class="col-md-7 order-md-2">
+					<h2 class="featurette-heading fw-normal lh-1">Chambre confort.
+						<span class="text-body-secondary">Spacieuse, Invitante, Relaxante.</span>
+					</h2>
+					<p class="lead">Nos chambres confort vous accueillent dans un espace spacieux et chaleureux. Le coin salon confortable est idéal pour se détendre, tandis qu'un minibar bien garni est à votre disposition pour satisfaire vos envies. Vous êtes au cœur de Paris, entouré de confort et de raffinement.</p>
+					<p>
+						<a class="btn btn-outline-dark mb-4" href="{{ path('confort')}}">Réserver &raquo;</a>
+					</p>
+				</div>
+				<div class="col-md-5 order-md-1">
+					<img src="image/site/confort.jpg" class="img-fluid" alt="la chambre confort">
+	
+				</div>
+			</div>
+	
+			<hr class="featurette-divider">
+	
+			<div class="row featurette">
+				<div class="col-md-7">
+					<h2 class="featurette-heading fw-normal lh-1">Suite Royale.
+						<span class="text-body-secondary">Somptueuse.</span>
+					</h2>
+					<p class="lead">La suite royale est un espace élégant où le luxe rencontre la grandeur, avec un salon privé somptueux, une vue imprenable, une baignoire spa apaisante, une douche à jets revitalisante et un service de majordome dévoué, créant ainsi une expérience inégalée de luxe parisien.</p>
+	        <p>
+						<a class="btn btn-outline-dark mb-4" href="{{ path('suite')}}">Réserver &raquo;</a>
+					</p>
+				</div>
+				<div class="col-md-5">
+					<img src="image/site/suite.jpg" class="img-fluid" alt="la suite royale">
+	
+				</div>
+			</div>
+	
+			<hr
+			class="featurette-divider">
+	
+		<!-- /FIN FEATURETTES -->
+		</div> #}
 {% endblock %}
