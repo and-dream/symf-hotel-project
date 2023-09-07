@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mer. 06 sep. 2023 à 16:52
+-- Généré le : jeu. 07 sep. 2023 à 16:55
 -- Version du serveur : 10.4.28-MariaDB
 -- Version de PHP : 8.2.4
 
@@ -20,6 +20,20 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `imperatrice_hotel`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `category`
+--
+
+CREATE TABLE `category` (
+  `id` int(11) NOT NULL,
+  `hotel` varchar(255) NOT NULL,
+  `chambre` varchar(255) NOT NULL,
+  `restaurant` varchar(255) NOT NULL,
+  `soins` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -42,9 +56,9 @@ CREATE TABLE `chambre` (
 --
 
 INSERT INTO `chambre` (`id`, `titre`, `description_courte`, `description_longue`, `photo`, `prix_journalier`, `date_enregistrement`) VALUES
-(1, 'Chambre classique', 'Élégance intemporelle, lit king-size, vue sur la ville, salle de bain en marbre. L\'essence du confort parisien.', '<div>&nbsp;Plongez dans l\'élégance intemporelle de notre chambre classique. À l\'intérieur, vous trouverez un lit king-size somptueusement confortable, drapé de linge de haute qualité. La vue depuis votre fenêtre vous offre une perspective captivante sur la magnifique ville de Paris, où l\'histoire et la modernité se rencontrent. La salle de bains en marbre est un havre de tranquillité, équipée d\'une baignoire profonde et d\'une douche à effet pluie pour une expérience de détente absolue. Chaque détail a été pensé pour votre confort, des peignoirs moelleux aux produits de bain haut de gamme. La chambre classique incarne l\'essence du luxe parisien, avec une touche de charme unique.&nbsp;</div>', '1693987617-classique-4b5587dd51ee1155a790e9afda424880fc2717cb.jpg', 2300, '2023-09-06 10:06:57'),
-(2, 'Chambre confort', 'Spacieuse, lit douillet, coin salon, minibar bien garni. Un refuge de luxe pour se détendre au cœur de Paris.', '<div>&nbsp;Bienvenue dans notre chambre confort, un espace conçu pour offrir un confort optimal au cœur de Paris. Le lit, d\'une douceur inégalée, est un véritable havre de repos après une journée de découvertes dans la ville lumière. Le coin salon spacieux est idéal pour vous détendre avec un bon livre ou un verre de vin. Un minibar soigneusement approvisionné est à votre disposition pour satisfaire vos envies gourmandes à tout moment. Les grandes fenêtres laissent entrer la lumière naturelle tout en vous offrant une vue agréable sur les environs. Vous pouvez vous attendre à une expérience de luxe, où chaque détail est pensé pour votre bien-être.&nbsp;</div>', '1693987896-confort-ccb5a40059ae30a64f7c22dda8c7787fc0e810cf.jpg', 2700, '2023-09-06 10:11:36'),
-(3, 'Suite Royale', 'L\'apogée du luxe, salon privé, vue panoramique, baignoire spa, service de majordome. Une expérience incomparable à Paris.', '<div>&nbsp;Bienvenue dans l\'apogée du luxe à Paris - notre suite vous offre une expérience inégalée. Dès votre arrivée, vous serez accueilli par un salon privé exquis, où vous pourrez vous détendre en toute intimité. Les grandes baies vitrées vous offrent une vue panoramique à couper le souffle sur les monuments emblématiques de Paris, créant une toile de fond inoubliable pour votre séjour. La chambre principale est équipée d\'un lit king-size somptueux, et la salle de bains est une oasis de bien-être, avec une baignoire spa, une douche à jets et des produits de bain de luxe. Un service de majordome personnel est à votre disposition pour répondre à vos moindres besoins, que ce soit pour organiser des visites privées ou pour un service de chambre exceptionnel. La suite offre une expérience incomparable de raffinement et de grandeur à Paris.&nbsp;</div>', '1693987989-suite-31e2c359843d46d61b255f880b5da25074cc900f.jpg', 3590, '2023-09-06 10:13:09');
+(1, 'Chambre classique', 'Élégance intemporelle, lit king-size, vue sur la ville, salle de bain en marbre. L\'essence du confort parisien.', '<div>Plongez dans l\'élégance intemporelle de notre chambre classique. À l\'intérieur, vous trouverez un lit king-size somptueusement confortable, drapé de linge de haute qualité. La vue depuis votre fenêtre vous offre une perspective captivante sur la magnifique ville de Paris, où l\'histoire et la modernité se rencontrent. La salle de bains en marbre est un havre de tranquillité, équipée d\'une baignoire profonde et d\'une douche à effet pluie pour une expérience de détente absolue. Chaque détail a été pensé pour votre confort, des peignoirs moelleux aux produits de bain haut de gamme. La chambre classique incarne l\'essence du luxe parisien, avec une touche de charme unique.&nbsp;</div>', '1694071727-classique-21328ba8847c96786acc757741046cbb6b2b0522.jpg', 2300, '2023-09-06 10:06:57'),
+(2, 'Chambre confort', 'Spacieuse, lit douillet, coin salon, minibar bien garni. Un refuge de luxe pour se détendre au cœur de Paris.', '<div>&nbsp;Bienvenue dans notre chambre confort, un espace conçu pour offrir un confort optimal au cœur de Paris. Le lit, d\'une douceur inégalée, est un véritable havre de repos après une journée de découvertes dans la ville lumière. Le coin salon spacieux est idéal pour vous détendre avec un bon livre ou un verre de vin. Un minibar soigneusement approvisionné est à votre disposition pour satisfaire vos envies gourmandes à tout moment. Les grandes fenêtres laissent entrer la lumière naturelle tout en vous offrant une vue agréable sur les environs. Vous pouvez vous attendre à une expérience de luxe, où chaque détail est pensé pour votre bien-être.&nbsp;</div>', '1694071737-confort-6ff122b4d9bda0e49dae2174d1b1d52c405a3958.jpg', 2700, '2023-09-06 10:11:36'),
+(3, 'Suite Royale', 'L\'apogée du luxe, salon privé, vue panoramique, baignoire spa, service de majordome. Une expérience incomparable à Paris.', '<div>&nbsp;Bienvenue dans l\'apogée du luxe à Paris - notre suite vous offre une expérience inégalée. Dès votre arrivée, vous serez accueilli par un salon privé exquis, où vous pourrez vous détendre en toute intimité. Les grandes baies vitrées vous offrent une vue panoramique à couper le souffle sur les monuments emblématiques de Paris, créant une toile de fond inoubliable pour votre séjour. La chambre principale est équipée d\'un lit king-size somptueux, et la salle de bains est une oasis de bien-être, avec une baignoire spa, une douche à jets et des produits de bain de luxe. Un service de majordome personnel est à votre disposition pour répondre à vos moindres besoins, que ce soit pour organiser des visites privées ou pour un service de chambre exceptionnel. La suite offre une expérience incomparable de raffinement et de grandeur à Paris.&nbsp;</div>', '1694071746-suite-822670a256f447e8ba53215d22131d704176f25b.jpg', 3590, '2023-09-06 10:13:09');
 
 -- --------------------------------------------------------
 
@@ -62,6 +76,27 @@ CREATE TABLE `commande` (
   `nom` varchar(255) NOT NULL,
   `telephone` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
+  `date_enregistrement` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `commande`
+--
+
+INSERT INTO `commande` (`id`, `chambre_id`, `date_arrivee`, `date_depart`, `prix_total`, `prenom`, `nom`, `telephone`, `email`, `date_enregistrement`) VALUES
+(1, 3, '2023-09-20', '2023-09-30', 32310, 'gloria', 'damase', '0257885122', 'gloria@mail.com', '2023-09-07 15:45:12');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `comment`
+--
+
+CREATE TABLE `comment` (
+  `id` int(11) NOT NULL,
+  `categorie_id` int(11) NOT NULL,
+  `auteur` varchar(255) NOT NULL,
+  `commentaire` longtext NOT NULL,
   `date_enregistrement` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -83,7 +118,9 @@ CREATE TABLE `doctrine_migration_versions` (
 
 INSERT INTO `doctrine_migration_versions` (`version`, `executed_at`, `execution_time`) VALUES
 ('DoctrineMigrations\\Version20230906094902', '2023-09-06 11:49:21', 12),
-('DoctrineMigrations\\Version20230906095122', '2023-09-06 11:51:36', 9);
+('DoctrineMigrations\\Version20230906095122', '2023-09-06 11:51:36', 9),
+('DoctrineMigrations\\Version20230907142856', '2023-09-07 16:29:10', 99),
+('DoctrineMigrations\\Version20230907143729', '2023-09-07 16:37:39', 9);
 
 -- --------------------------------------------------------
 
@@ -119,7 +156,7 @@ CREATE TABLE `slider` (
 --
 
 INSERT INTO `slider` (`id`, `photo`, `ordre`, `date_enregistrement`) VALUES
-(1, '1694001173-slide-1-3ddcc62e789743e75a432d34a6cb27b491296f77.jpg', 1, '2023-09-06 10:13:34'),
+(1, '1694070904-slide-1-4b8ba6c7adc7588a722e26d9bc172b9a27a75e29.jpg', 1, '2023-09-06 10:13:34'),
 (2, '1694001185-slide-2-0feebd793af4922d2730c2490ae1896ef92887fe.jpg', 2, '2023-09-06 10:13:42'),
 (3, '1694001204-slide-3-99816550c3a21b31eab264b7e82467e1226b0a30.jpg', 3, '2023-09-06 10:13:57');
 
@@ -153,6 +190,12 @@ INSERT INTO `user` (`id`, `email`, `roles`, `password`, `pseudo`, `nom`, `prenom
 --
 
 --
+-- Index pour la table `category`
+--
+ALTER TABLE `category`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Index pour la table `chambre`
 --
 ALTER TABLE `chambre`
@@ -164,6 +207,13 @@ ALTER TABLE `chambre`
 ALTER TABLE `commande`
   ADD PRIMARY KEY (`id`),
   ADD KEY `IDX_6EEAA67D9B177F54` (`chambre_id`);
+
+--
+-- Index pour la table `comment`
+--
+ALTER TABLE `comment`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `IDX_9474526CBCF5E72D` (`categorie_id`);
 
 --
 -- Index pour la table `doctrine_migration_versions`
@@ -198,6 +248,12 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT pour la table `category`
+--
+ALTER TABLE `category`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT pour la table `chambre`
 --
 ALTER TABLE `chambre`
@@ -207,6 +263,12 @@ ALTER TABLE `chambre`
 -- AUTO_INCREMENT pour la table `commande`
 --
 ALTER TABLE `commande`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT pour la table `comment`
+--
+ALTER TABLE `comment`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
@@ -236,6 +298,12 @@ ALTER TABLE `user`
 --
 ALTER TABLE `commande`
   ADD CONSTRAINT `FK_6EEAA67D9B177F54` FOREIGN KEY (`chambre_id`) REFERENCES `chambre` (`id`);
+
+--
+-- Contraintes pour la table `comment`
+--
+ALTER TABLE `comment`
+  ADD CONSTRAINT `FK_9474526CBCF5E72D` FOREIGN KEY (`categorie_id`) REFERENCES `category` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
