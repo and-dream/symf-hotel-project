@@ -16,15 +16,14 @@ class CommentType extends AbstractType
             ->add('content')
             // ->add('date_enregistrement')
             ->add('author')
-            ->add('category', ChoiceType::class, [
+            ->add('category',  ChoiceType::class, [
                 'choices' => [
                     'Hotel' => 'hotel',
                     'Chambre' => 'chambre',
                     'Restaurant' => 'restaurant',
-                    'Spa' => 'spa',
+                    'Spa' => 'spa'
                 ],
-                'label' => 'Catégorie',
-                ])
+            ])
         ;
     }
 
@@ -35,3 +34,5 @@ class CommentType extends AbstractType
         ]);
     }
 }
+
+

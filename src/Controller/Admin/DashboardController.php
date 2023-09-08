@@ -6,6 +6,7 @@ use App\Entity\User;
 use App\Entity\Slider;
 use App\Entity\Chambre;
 use App\Entity\Commande;
+use App\Entity\Comment;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -42,6 +43,7 @@ class DashboardController extends AbstractDashboardController
             ]),
             MenuItem::section('Clients'),
             MenuItem::linkToCrud('Commandes', 'fa fa-key', Commande::class),
+            MenuItem::linkToCrud('Avis', 'fa-regular fa-star', Comment::class),
             MenuItem::section('Déconnexion'),
             MenuItem::linkToUrl('logout', 'fa-solid fa-right-from-bracket', '/logout'),
             

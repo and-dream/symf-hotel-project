@@ -100,45 +100,34 @@ class HomeController extends AbstractController
         return $this->render('home/newsletter.html.twig');
     }
 
-    // #[Route('/avis', name:'avis')]
-    // public function comment(CommentRepository $comment, Request $rq, Category $category): Response
-    // {
-    //     $comment = new Comment;
-    //     $comment->setDateEnregistrement(new \DateTime());
-    //     $form = $this->createForm(CommentType::class, $comment);
-
-        
-    //     return $this->render('home/avis.html.twig', [
-    //         'form' => $form
-    //     ]);
-    // }
-
     #[Route('/avis', name:"avis")]
     public function show(CommentRepository $repo, Request $rq, EntityManagerInterface $manager)
     {
         $comment = $repo->findAll();
 
-        $commentaire = new Comment;
-        $form = $this->createForm(CommentType::class, $commentaire);
+        $comment = new Comment;
+        $form = $this->createForm(CommentType::class, $comment);
         $form->handleRequest($rq);
 
        
         if($form->isSubmitted() && $form->isValid())
         {
-           $commentaire->setDateEnregistrement(new \DateTime);
+           $comment->setDateEnregistrement(new \DateTime());
                         
                         
-            $manager->persist($commentaire);
+            $manager->persist($comment);
             $manager->flush();
             
             $this->addFlash('success', "Votre commentaire a bien été envoyé");
+            
             
             return $this->redirectToRoute('home');
         }
         
         
-            return $this->render('/home/avis.html.twig', [
-                'comment' => $form
+            return $this->render('home/avis.html.twig', [
+                'comment' => $comment,
+                'avisForm' => $form
         ]);
     }
 
