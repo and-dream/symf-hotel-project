@@ -6,6 +6,7 @@
         <thead>
             <tr>
                 <th class="col-3">Nom/Date</th>
+                <th class="col-3">Date</th>
                 <th class="col-9">Commentaires</th>
             </tr>
         </thead>
@@ -13,8 +14,9 @@
         <tbody>
             {% for comment in comment %}
                 <tr>
-                    <td>{{ comment.author }} <br> <small>{{ comment.dateEnregistrement|date('d/m/Y à H:i:s') }}</small></td>
-                    <td>{{ comment.content }}</td>
+                    <td>{{ comment.author }}</td>
+                    <td>{{ comment.dateEnregistrement|date('d/m/Y à H:i:s') }}</td>
+					<td>{{ comment.content }}</td>
                 </tr>              
             {% endfor %}
         </tbody>

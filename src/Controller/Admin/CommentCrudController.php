@@ -35,14 +35,14 @@ class CommentCrudController extends AbstractCrudController
         ];
     }
 
-    public function configureFilters(Filters $filters): Filters
-    {
-        return parent::configureFilters($filters)
-        ->add('hotel')
-        ->add('chambre')
-        ->add('restaurant')
-        ->add('spa')
-        ;
-    }
+    // public function configureFilters(Filters $filters): Filters
+    // {
+    //     return parent::configureFilters($filters)
+    //     ->add('hotel')
+    //     ->add('chambre')
+    //     ->add('restaurant')
+    //     ->add('spa')
+    //     ;
+    // }
     
 }
