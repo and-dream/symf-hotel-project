@@ -14,59 +14,35 @@ class Comment
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $auteur = null;
-
     #[ORM\Column(type: Types::TEXT)]
-    private ?string $commentaire = null;
-
-    #[ORM\ManyToOne(inversedBy: 'comments')]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?Category $categorie = null;
+    private ?string $content = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $date_enregistrement = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $author = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $category = null;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getAuteur(): ?string
+    public function getContent(): ?string
     {
-        return $this->auteur;
+        return $this->content;
     }
 
-    public function setAuteur(string $auteur): static
+    public function setContent(string $content): static
     {
-        $this->auteur = $auteur;
+        $this->content = $content;
 
         return $this;
     }
 
-    public function getCommentaire(): ?string
-    {
-        return $this->commentaire;
-    }
-
-    public function setCommentaire(string $commentaire): static
-    {
-        $this->commentaire = $commentaire;
-
-        return $this;
-    }
-
-    public function getCategorie(): ?Category
-    {
-        return $this->categorie;
-    }
-
-    public function setCategorie(?Category $categorie): static
-    {
-        $this->categorie = $categorie;
-
-        return $this;
-    }
 
     public function getDateEnregistrement(): ?\DateTimeInterface
     {
@@ -76,6 +52,30 @@ class Comment
     public function setDateEnregistrement(\DateTimeInterface $date_enregistrement): static
     {
         $this->date_enregistrement = $date_enregistrement;
+
+        return $this;
+    }
+
+    public function getAuthor(): ?string
+    {
+        return $this->author;
+    }
+
+    public function setAuthor(string $author): static
+    {
+        $this->author = $author;
+
+        return $this;
+    }
+
+    public function getCategory(): ?string
+    {
+        return $this->category;
+    }
+
+    public function setCategory(string $category): static
+    {
+        $this->category = $category;
 
         return $this;
     }

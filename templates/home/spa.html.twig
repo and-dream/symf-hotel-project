@@ -1,10 +1,80 @@
 {% extends "base.html.twig" %}
 
-{% block title %}Spa{% endblock %}
+{% block title %}Spa
+{% endblock %}
+
 
 {% block body %}
-<div class="container">
-<h1>Le spa</h1>
-<p>Bienvenue dans notre sanctuaire de bien-être, où détente et revitalisation vous attendent.</p>
-</div>
+	<h1>Le spa</h1>
+
+	<div class="has-bg-img">
+
+		<img class="bg-img mb-3" src=" {{asset('image/site/spa-header.jpg') }}" style="width: 100%;" alt="chambre">
+
+	</div>
+
+	<div class="container">
+		<p>Bienvenue dans notre sanctuaire de bien-être, où détente et revitalisation vous attendent.</p>
+		<p>Notre luxueux spa vous invite à une expérience de détente ultime. Avec des installations modernes, des massages apaisants, des soins de beauté et une piscine chauffée, notre spa est l'endroit idéal pour revitaliser votre corps et apaiser votre esprit. Laissez-vous choyer par notre équipe de professionnels dédiés, et profitez d'un moment de pur bonheur au cœur de Paris.</p>
+	</div>
+	<hr
+	featurette-divider>
+	<!-- presentation soin-->
+	<div class="container mt-5">
+		<div class="row justify-content-between">
+			<div class="card col-3 mb-3">
+				<h3 class="card-header">Soin Détenter</h3>
+				<div class="card-body">
+					<h5 class="card-title">Evasion suprême</h5>
+				</div>
+				<img src="image/site/spa-soin-détente.jpg" alt="">
+				<div class="card-body">
+					<p class="card-text">Ce soin vous plongera dans un état de détente totale. Commencez par un massage facial apaisant qui réhydrate et régénère votre peau. Ensuite, laissez-vous envelopper par les bienfaits d'un bain vapeur, qui élimine le stress et les tensions, laissant votre esprit et votre corps rajeunis et revitalisés. L'Évasion Suprême est le choix parfait pour une relaxation profonde.</p>
+				</div>
+			
+				<div class="card-body">
+					<a href="#" class="card-link">Réserver</a>
+
+				</div>
+
+			</div>
+
+
+			<div class="card col-3 mb-3">
+				<h3 class="card-header">Soin relaxant</h3>
+				<div class="card-body">
+					<h5 class="card-title">Harmonie absolue</h5>
+				</div>
+				<img src="image/site/spa-soin-relaxant.jpg" alt="">
+				<div class="card-body">
+					<p class="card-text">Laissez-vous choyer de la tête aux pieds avec notre soin Harmonie Absolue. Ce massage complet du corps, utilisant des galets chauffants et des huiles essentielles, libère les nœuds musculaires, améliore la circulation sanguine et favorise une relaxation profonde. Vous vous sentirez complètement régénéré et équilibré après cette expérience de détente.</p>
+				</div>
+				
+				<div class="card-body">
+					<a href="#" class="card-link">Réserver</a>
+
+				</div>
+
+			</div>
+
+			<div class="card col-3 mb-3">
+				<h3 class="card-header">Soin plaisir</h3>
+				<div class="card-body">
+					<h5 class="card-title">Douceur enchantée</h5>
+				</div>
+				<img src="image/site/spa-soin-plaisir.jpg" alt="">
+				<div class="card-body">
+					<p class="card-text">Notre Soin Plaisir, une expérience unique, éveille vos sens d'une manière magique. Ce soin vous offre un massage relaxant aux huiles essentielles, suivi d'une séance de méditation guidée dans notre jardin secret. Profitez ensuite d'une dégustation de chocolat artisanal et de champagne pour prolonger ce moment enchanteur. La Douceur Enchantée est une célébration du plaisir ultime pour le corps et l'esprit.</p>
+				</div>
+				
+				<div class="card-body">
+					<a href="#" class="card-link">Réserver</a>
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<!-- fin presentation soin-->
 {% endblock %}

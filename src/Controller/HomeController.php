@@ -5,9 +5,11 @@ namespace App\Controller;
 use App\Entity\Category;
 use App\Entity\Comment;
 use App\Form\CommentType;
+use App\Form\ContactType;
 use App\Repository\SliderRepository;
 use App\Repository\ChambreRepository;
 use App\Repository\CommentRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -60,9 +62,12 @@ class HomeController extends AbstractController
     }
 
     #[Route('/contact', name:'contact')]
-    public function contact(): Response
+    public function contact(Request $request): Response
     {
-        return $this->render('home/contact.html.twig');
+        $form = $this->createForm(ContactType::class);
+        return $this->render('home/contact.html.twig', [
+            'formContact' => $form
+        ]);
     }
 
     #[Route('/news', name:'actu')]
@@ -95,16 +100,45 @@ class HomeController extends AbstractController
         return $this->render('home/newsletter.html.twig');
     }
 
-    #[Route('/avis', name:'avis')]
-    public function comment(CommentRepository $comment, Request $rq, Category $category): Response
-    {
-        $comment = new Comment;
-        $comment->setDateEnregistrement(new \DateTime());
-        $form = $this->createForm(CommentType::class, $comment);
+    // #[Route('/avis', name:'avis')]
+    // public function comment(CommentRepository $comment, Request $rq, Category $category): Response
+    // {
+    //     $comment = new Comment;
+    //     $comment->setDateEnregistrement(new \DateTime());
+    //     $form = $this->createForm(CommentType::class, $comment);
 
         
-        return $this->render('home/avis.html.twig', [
-            'form' => $form
+    //     return $this->render('home/avis.html.twig', [
+    //         'form' => $form
+    //     ]);
+    // }
+
+    #[Route('/avis', name:"avis")]
+    public function show(CommentRepository $repo, Request $rq, EntityManagerInterface $manager)
+    {
+        $comment = $repo->findAll();
+
+        $commentaire = new Comment;
+        $form = $this->createForm(CommentType::class, $commentaire);
+        $form->handleRequest($rq);
+
+       
+        if($form->isSubmitted() && $form->isValid())
+        {
+           $commentaire->setDateEnregistrement(new \DateTime);
+                        
+                        
+            $manager->persist($commentaire);
+            $manager->flush();
+            
+            $this->addFlash('success', "Votre commentaire a bien été envoyé");
+            
+            return $this->redirectToRoute('home');
+        }
+        
+        
+            return $this->render('/home/avis.html.twig', [
+                'comment' => $form
         ]);
     }
 
