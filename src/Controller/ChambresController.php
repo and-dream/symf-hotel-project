@@ -50,5 +50,6 @@ class ChambresController extends AbstractController
 
     }       
    
+    
 }
      
