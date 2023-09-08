@@ -73,7 +73,11 @@ class HomeController extends AbstractController
     #[Route('/news', name:'actu')]
     public function news(): Response
     {
-        return $this->render('home/news.html.twig');
+        $rssFileNews = 'https://www.lhotellerie-restauration.fr/rss/actu_rss.xml?xtor=RSS-1';
+        $rss = simplexml_load_file($rssFileNews); 
+        return $this->render('home/news.html.twig', [
+            'rss' => $rss
+        ]);
     }
 
     #[Route('/mentions-legales', name:'policy')]

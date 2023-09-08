@@ -1,45 +1,59 @@
-
-
 <nav class="navbar navbar-expand-lg bg-light mb-3" data-bs-theme="light">
-				<div class="container-fluid">
-					<a class="navbar-brand" href="/">Hôtel de L'Impératrice*****</a>
-					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
-						<span class="navbar-toggler-icon"></span>
-					</button>
-					<div class="collapse navbar-collapse" id="navbarColor03">
-						<ul class="navbar-nav me-auto">
-							<li class="nav-item">
-								<a class="nav-link active" href="/">Accueil
-									<span class="visually-hidden">(current)</span>
-								</a>
-							</li>
-							<li class="nav-item dropdown">
-								<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">L'hôtel</a>
-								<div class="dropdown-menu">
-									<a class="dropdown-item" href="{{ path('apropos')}}">Qui sommes-nous ?</a>
-									<a class="dropdown-item" href="{{ path('acces')}}">Accès</a>
-									<a class="dropdown-item" href="{{ path('contact')}}">Contact</a>
-									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="{{ path('avis')}}">Avis</a>
-								</div>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="{{ path('chambre')}}">Les chambres</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="{{ path('restaurant')}}">Le restaurant</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="{{ path('spa')}}">Le spa</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="{{ path('actu')}}">Actualités</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="{{ path('contact')}}">Contact</a>
-							</li>
-						</ul>
-						
+	<div class="container-fluid">
+		<a class="navbar-brand" href="/">Hôtel de L'Impératrice*****</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarColor03">
+			<ul class="navbar-nav me-auto">
+				<li class="nav-item">
+					<a class="nav-link active" href="/">Accueil
+						<span class="visually-hidden">(current)</span>
+					</a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">L'hôtel</a>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="{{ path('apropos')}}">Qui sommes-nous ?</a>
+						<a class="dropdown-item" href="{{ path('acces')}}">Accès</a>
+						<a class="dropdown-item" href="{{ path('contact')}}">Contact</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="{{ path('avis')}}">Avis</a>
 					</div>
-				</div>
-			</nav>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{{ path('chambre')}}">Les chambres</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{{ path('restaurant')}}">Le restaurant</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{{ path('spa')}}">Le spa</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{{ path('actu')}}">Actualités</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{{ path('contact')}}">Contact</a>
+				</li>
+
+				<li class="nav-item">
+					<a class="nav-link" href="#"><img src="{{ asset('image/site/fr.jpg')}}" alt="fr-flag"></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#"><img src="{{ asset('image/site/us.jpg')}}" alt="us-flag"></a>
+				</li>
+
+
+				{% if is_granted('ROLE_ADMIN') %}
+
+					<li class="nav-item">
+						<a class="nav-link" href="{{ path('app_logout')}}">Déconnexion</a>
+					</li>
+
+				{% endif %}
+			</ul>
+
+		</div>
+	</div>
+</nav>

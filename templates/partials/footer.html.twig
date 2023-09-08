@@ -82,12 +82,12 @@
 				</a>
 
 				<!-- Twitter -->
-				<a class="btn btn-floating m-1" style="font-size: 20px; color: #1DA1F2;" href="#!" role="button">
+				<a class="btn btn-floating m-1" style="font-size: 20px; color: #1DA1F2;" href="#!"  role="button">
 					<i class="bi bi-twitter"></i>
 				</a>
 
 				<!-- Print -->
-				<a class="btn btn-floating m-1" style="font-size: 20px; color: #bebebe;" href="#!" role="button">
+				<a class="btn btn-floating m-1" style="font-size: 20px; color: #bebebe;" href="#" onclick="window.print();return false;" role="button">
 					<i class="bi bi-printer"></i>
 				</a>
 			</section>
@@ -113,7 +113,7 @@
 							<a href="{{ path('conditions_vente')}}" class="text-white">CGV</a>
 						</li>
 						<li>
-							<a href="#!" class="text-white">Plan du site</a>
+							<a href="{{ path ('plan_site')}}" class="text-white">Plan du site</a>
 						</li>
 
 					</ul>
@@ -132,7 +132,7 @@
 							<a href="{{ path('contact')}}" class="text-white">Contact</a>
 						</li>
 						<li>
-							<a href="#!" class="text-white">Imprimer la page</a>
+							<a href="#" onclick="window.print();return false;" class="text-white">Imprimer la page</a>
 						</li>
 					</ul>
 				</div>
