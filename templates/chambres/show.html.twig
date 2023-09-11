@@ -1,0 +1,48 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+
+	<div class="container mb-5">
+		<h1>{{chambre.titre}}</h1>
+
+		<p>{{chambre.descriptionLongue|raw}}</p>
+
+		<img src="{{ asset('image/' ~ chambre.photo )}}" class="img-fluid" alt="{{chambre.titre ~ '-' ~ chambre.photo}}">
+
+		<hr
+		class="featurette-divider">
+
+		<!-- Réservation -->
+
+		<div>
+			{{ form_start(form, {
+        attr: {novalidate: "novalidate"}
+            }) }}
+
+			{{ form_row(form.date_arrivee)}}
+			{{ form_row(form.date_depart)}}
+		</div>
+
+
+		<div>
+			{{ form_row(form.prenom)}}
+			{{ form_row(form.nom)}}
+			{{ form_row(form.telephone)}}
+			{{ form_row(form.email)}}
+		</div>
+
+		<div class="text-end mt-4">
+			<button type="submit" class="btn btn-outline-warning">Réserver à ces dates</button>
+			
+            <!-- Réservation -->
+
+		</div>
+
+
+		{{ form_end(form) }}
+
+	</div>
+
+
+{% endblock %}

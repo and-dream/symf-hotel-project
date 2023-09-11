@@ -1,9 +1,28 @@
 {% extends "base.html.twig" %}
 
-{% block title %}Contact{% endblock %}
+{% block title %}Contact
+{% endblock %}
+{% block stylesheets %}
+	<link rel="stylesheet" href="public/css/style.css">
+{% endblock %}
 
 {% block body %}
-<div class="container">
-<h1>Nous contacter</h1>
-</div>
-{% endblock %}
+	<div class="container">
+		<div class="card border-0 shadow my-5">
+			<div class="card-body p-5">
+				<h1 class="fw-light">Nous contacter</h1>
+				<p class="lead">Une information ? Une requête spéciale ? N'hésitez pas à nous envoyer un message, un membre du personnel se fera un plaisir de vous répondre</p>
+				<p class="lead mb-0"></p>
+				<div class="container mt-5">
+
+					<button type="submit" class="btn btn-secondary">Envoyer</button>
+					{{ form(formContact)}}
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	{% endblock %}

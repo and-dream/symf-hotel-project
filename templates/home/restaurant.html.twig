@@ -1,9 +1,218 @@
 {% extends "base.html.twig" %}
 
-{% block title %}Restaurant{% endblock %}
+{% block title %}Restaurant
+{% endblock %}
+
 
 {% block body %}
-<div class="container">
-<h1>Le restaurant</h1>
-</div>
+	<h1>Le restaurant</h1>
+
+	<div class="has-bg-img">
+
+		<img class="bg-img" src=" {{asset ('image/site/restaurant-header.jpg') }}" style="width: 100%;" alt="chambre">
+
+	</div>
+
+	<div
+		class="container">
+		<!-- mot du chef-->
+		<div class="row">
+			<div class="d-flex  justify-content-end mt-4">
+				<img class="img-fluid" src="{{ asset ('image/site/mot-chef.jpg')}}" alt="chef restaurant">
+			</div>
+		</div>
+		<!-- mot du chef-->
+
+
+		<!-- Menu Brasserie-->
+
+		<hr featurette-divider>
+		<h2>Carte Brasserie</h2>
+
+		<div class="accordion accordion-flush" id="accordionFlushExample">
+			<div class="accordion-item">
+				<h2 class="accordion-header">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+						Entrées
+					</button>
+				</h2>
+				<div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+					<div class="accordion-body">
+                    Salade Niçoise - 18 €<br>
+                    Velouté de légumes de saison - 14 €<br>
+                    Tartare de thon à la mangue et à la coriandre, vinaigrette passion - 22 €<br>
+                    Velouté de potimarron aux truffes noires - 18 €</div>
+				</div>
+			</div>
+			<div class="accordion-item">
+				<h2 class="accordion-header">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+						Plats
+					</button>
+				</h2>
+				<div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+					<div class="accordion-body">
+                    Filet de saumon grillé, légumes du marché - 26 € <br>
+                    Risotto aux champignons sauvages - 22 €<br>
+                    Magret de canard laqué à l'orange, purée de patates douces - 32 €<br>
+                    Risotto aux cèpes et à la truffe blanche - 28 €</div>
+				</div>
+			</div>
+			<div class="accordion-item">
+				<h2 class="accordion-header">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+						Desserts
+					</button>
+				</h2>
+				<div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+					<div class="accordion-body">
+                    Crème brûlée à la vanille - 10 €<br>
+                    Tarte au citron meringuée - 12 €<br>
+                    Sphère chocolatée, sorbet exotique - 20 €<br>
+                    Tarte Tatin aux pommes, glace à la cannelle - 16 €</div>
+				</div>
+			</div>
+
+            
+            <div class="accordion-item">
+				<h2 class="accordion-header">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+						Boissons
+					</button>
+				</h2>
+				<div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+					<div class="accordion-body">
+                        Bouteille de vin blanc Pouilly-Fuissé 2018 - 75 €<br>
+                        Bouteille de vin rouge Château Margaux 2015 - 450 €<br>
+                        Eau minérale gazeuse (750 ml) - 8 €<br>
+                        Café ou thé - 4 €</div>
+				</div>
+			</div>
+		</div>
+		<!-- Menu Dégustation-->
+		<h2>Carte Dégustation</h2>
+
+		<div class="accordion accordion-flush" id="accordionFlushExample">
+			<div class="accordion-item">
+				<h2 class="accordion-header">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+						Dégustation
+					</button>
+				</h2>
+				<div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+					<div class="accordion-body">
+                    Assortiment de foie gras, confiture de figues maison - 28 €<br>
+                    Plateau de fruits de mer, huîtres, crevettes, homard - 45 €<br>
+                    Assiette de fromages affinés - 20 €<br>
+                    Plateau de fruits de saison - 16 €</div>
+				</div>
+			</div>
+			<div class="accordion-item">
+				<h2 class="accordion-header">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+						Goûter
+					</button>
+				</h2>
+				<div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+					<div class="accordion-body">
+                    Sélection de pâtisseries françaises - 18 €<br>
+                    Éclair au foie gras, réduction de Porto - 20 €<br>
+                    Profiteroles au caramel beurre salé - 16 €</div>
+				</div>
+			</div>
+			<div class="accordion-item">
+				<h2 class="accordion-header">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+						Snack de luxe
+					</button>
+				</h2>
+				<div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+					<div class="accordion-body">
+                    Club sandwich au saumon fumé - 22 €<br>
+                    Croque-monsieur au caviar - 42 €<br>
+                    Tartare de bœuf wagyu, œuf de caille, truffes - 38 €<br>
+                    Burger gourmet aux truffes - 28 €</div>
+				</div>
+			</div>
+
+            
+            <div class="accordion-item">
+				<h2 class="accordion-header">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+						Boissons
+					</button>
+				</h2>
+				<div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+					<div class="accordion-body">
+                    Coupe de champagne Dom Pérignon - 50 €<br>
+                    Sélection de thés et tisanes rares - 12 €<br>
+                    Cocktail signature de l'hôtel - 18 €</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Menu Restaurant-->
+		<h2>Carte Restaurant</h2>
+
+		<div class="accordion accordion-flush" id="accordionFlushExample">
+			<div class="accordion-item">
+				<h2 class="accordion-header">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+						Entrées
+					</button>
+				</h2>
+				<div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+					<div class="accordion-body">
+                    Carpaccio de saint-jacques aux agrumes, perles de yuzu - 38 €<br>
+                    Foie gras en terrine, gelée de Sauternes - 42 €</div>
+				</div>
+			</div>
+			<div class="accordion-item">
+				<h2 class="accordion-header">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+						Plats
+					</button>
+				</h2>
+				<div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+					<div class="accordion-body">
+                    Filet de bœuf aux morilles, purée de pommes de terre truffée - 38 €<br>
+                    Lotte rôtie, sauce au safran, légumes grillés - 32 €<br>
+                    Filet de turbot aux truffes blanches d'Alba, émulsion au champagne - 68 €<br>
+                    Côte de veau en croûte de morilles, pommes fondantes - 58 €</div>
+				</div>
+			</div>
+			<div class="accordion-item">
+				<h2 class="accordion-header">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+						Desserts
+					</button>
+				</h2>
+				<div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+					<div class="accordion-body">
+                    Sphère de Chocolat Noir et Feuille d'Or - 24 €<br>
+                    Soufflé au Grand Marnier Flambé - 28 €<br>
+                    Création de Poire en Trois Textures - 22 €</div>
+				</div>
+			</div>
+
+            
+            <div class="accordion-item">
+				<h2 class="accordion-header">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+						Boissons
+					</button>
+				</h2>
+				<div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+					<div class="accordion-body">
+                    Bouteille de vin blanc Puligny-Montrachet 1er Cru 2017 - 95 €<br>
+                    Bouteille de vin rouge Château Latour 2009 - 800 €<br>
+                    Eau minérale plate ou gazeuse (750 ml) - 8 €<br>
+                    Café ou thé gourmand - 10 €</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
 {% endblock %}

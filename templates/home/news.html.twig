@@ -4,6 +4,26 @@
 
 {% block body %}
 <div class="container">
-<h1>Nos dernières actualités</h1>
+<h1>Nos dernières actualités</h1><hr>
+
+
+{% for item in rss %}
+   {% for label, valeur in item %}
+      
+      {% if label == "item" %}
+         {# <pre>
+            {{ dump(valeur) }}
+         </pre> #}
+        <h3>{{ valeur.title |raw}}</h3>
+         <p>{{ valeur.description|raw}}</p>
+         <a href="{{ valeur.link}}">Lire plus</a><hr>
+
+
+      {% endif %}
+      
+   {% endfor %}
+{% endfor %}
+
 </div>
 {% endblock %}
+

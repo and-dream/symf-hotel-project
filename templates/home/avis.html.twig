@@ -1,0 +1,49 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+	<h2 class="text-center my-2">Commentaires</h2>
+    <table class="table table-light table-sm">
+        <thead>
+            <tr>
+                <th class="col-3">Nom/Date</th>
+                <th class="col-3">Date</th>
+                <th class="col-9">Commentaires</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for comment in comment %}
+                <tr>
+                    <td>{{ comment.author }}</td>
+                    <td>{{ comment.dateEnregistrement|date('d/m/Y à H:i:s') }}</td>
+					<td>{{ comment.content }}</td>
+                </tr>              
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+	<h3 class="text-center my-2">Ajouter votre commentaire</h3>
+	<div class="container my-4 border border-primary">
+
+		{{ form_start(avisForm) }}
+
+		{{ form_row(avisForm.author, {
+            label: "Votre nom"
+        })}}
+
+		{{ form_row(avisForm.content, {
+            label: "Votre commentaire"
+        })}}
+		{{ form_row(avisForm.category, {
+            label: "Catégorie"
+        })}}
+		
+        <button type="submit" class="btn btn-secondary my-2">Envoyer</button>
+		
+		{{ form_end(avisForm) }}
+
+		
+	</div>
+
+{% endblock %}

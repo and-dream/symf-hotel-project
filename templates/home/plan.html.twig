@@ -1,9 +1,62 @@
 {% extends "base.html.twig" %}
 
 {% block title %}Plan du site{% endblock %}
+{% block stylesheets %}
+<link rel="stylesheet" href="css/style.css">
+{% endblock %}
 
 {% block body %}
-<div class="container">
-<h1>Plan du site</h1>
-</div>
+	<div class="container">
+		<h1>Plan du site</h1>
+        <hr>
+
+		<h2>L'hôtel</h2>
+		<ul>
+			<li>Qui sommes-nous ?</li>
+			<li>Accès</li>
+			<li>Contact</li>
+			<li>Avis</li>
+		</ul>
+
+		<h2>Les chambres</h2>
+		<ul>
+			<li>Chambre classique</li>
+			<li>Chambre confort</li>
+			<li>Suite Royale</li>
+		</ul>
+
+		<h2>Le restaurant</h2>
+		<ul>
+			<li>Carte brasserie</li>
+			<li>Carte dégustation</li>
+			<li>Carte restaurant</li>
+		</ul>
+
+		<h2>Le spa</h2>
+		<ul>
+			<li>Soin détente</li>
+			<li>Soin relaxant</li>
+			<li>Soin plaisir</li>
+		</ul>
+
+		<h2>Actualités</h2>
+		<ul>
+			<li>Les dernières actualités</li>
+		</ul>
+
+		<h2>Contact</h2>
+		<ul>
+			<li>Formulaire de contact</li>
+		</ul>
+
+		<h2>Liens divers</h2>
+		<ul>
+			<li>Mentions Légales</li>
+			<li>Conditions Générales de Vente</li>
+			<li>Plan du site</li>
+			<li>Imprimer la page</li>
+			<li>S'inscrire à la newsletter</li>
+			<li>Partager sur les réseaux sociaux</li>
+		</ul>
+	</div>
 {% endblock %}

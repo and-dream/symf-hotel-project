@@ -1,9 +1,47 @@
 {% extends "base.html.twig" %}
 
-{% block title %}Qui sommes-nous ?{% endblock %}
+{% block title %}Qui sommes-nous ?
+{% endblock %}
 
 {% block body %}
-<div class="container">
-    <h1>Notre histoire</h1>
-</div>
-{% endblock %}
+
+	<section class="section mt-5">
+		<div class="container">
+			<div class="row">
+				<h1>Notre histoire</h1>
+
+				<div class="col-md-6">
+					<div>
+						<img src="{{ asset ('/image/site/hotel-lobby.jpg')}}" class="img-fluid" alt="lobby de l'hotel"/>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-5 ml-auto d-flex align-items-center mt-4 mt-md-0">
+					<div>
+						<p>
+							L'Hôtel de L'Impératrice : Une Histoire de Raffinement et de Royauté
+						</p>
+						<p>Au cœur de Paris, à l'emplacement qui abrite désormais l'élégant "Hôtel de L'Impératrice," résidait autrefois un somptueux palais du Second Empire français. C'était l'ère de Napoléon III et de l'impératrice Eugénie, une période d'opulence, de sophistication et d'influence culturelle.</p>
+						<p>
+							<span style="font-weight:bold">L'Époque Impériale</span><br>
+							L'impératrice Eugénie, connue pour son goût raffiné et son amour pour les arts, était une figure emblématique de son temps. Sa passion pour la mode, la culture et l'architecture a grandement contribué à façonner le paysage de Paris. Lors de ses visites officielles à travers la ville, elle a laissé une empreinte indélébile.</p>
+						<p>
+							<span style="font-weight:bold">La Transformation du Palais</span><br>
+							Au fil des années, le palais où résidait l'impératrice est devenu le témoin silencieux de l'histoire de la France. Après des décennies de changements politiques et sociaux, il a été soigneusement restauré pour préserver son charme d'antan. Ainsi, est né "L'Hôtel de L'Impératrice," un hommage à la grandeur et à l'élégance de l'impératrice Eugénie.</p>
+
+					</div>
+				</div>
+				<p>
+					<span style="font-weight:bold">Un Héritage de Luxe</span><br>
+					Chaque recoin de l'hôtel est imprégné de l'héritage de l'impératrice. Les chambres et les suites portent des noms évocateurs de son époque, rappelant les grandes personnalités qui ont fréquenté ces lieux. La décoration intérieure, tout en étant moderne et raffinée, évoque l'opulence du Second Empire.</p>
+				<p>
+					<span style="font-weight:bold">
+						Le Restaurant Étoilé</span><br>
+					Le restaurant étoilé de l'hôtel est une célébration des arts culinaires, inspiré des goûts exquis de l'impératrice. Les plats sont élaborés avec soin, mêlant tradition et innovation, pour offrir une expérience gastronomique digne de la royauté.</p>
+				<p>
+					<span style="font-weight:bold">L'Engagement envers l'Excellence</span><br>
+					"L'Hôtel de L'Impératrice" s'engage à perpétuer l'héritage d'élégance et de sophistication de l'impératrice Eugénie. Notre personnel dévoué et nos installations de classe mondiale assurent à nos clients une expérience mémorable et luxueuse, digne de la noblesse impériale.</p><br>
+				<p>Aujourd'hui, "L'Hôtel de L'Impératrice" est bien plus qu'un simple hôtel. C'est un sanctuaire de raffinement, un hommage vivant à une époque révolue, et un lieu où le luxe et la culture se marient pour offrir une expérience incomparable à ceux qui cherchent à vivre la grandeur de Paris à travers les yeux de l'impératrice Eugénie. Venez nous rejoindre pour un voyage à travers le temps et l'élégance à "L'Hôtel de L'Impératrice.</p>
+			</div>
+		</section>
+
+	{% endblock %}
